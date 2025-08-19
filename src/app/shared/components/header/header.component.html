@@ -1,0 +1,51 @@
+<div class="w-full h-20 flex items-center justify-between px-4 md:px-6 bg-gray-50 rounded-2xl ">
+  <div class="relative w-64">
+    <input
+      z-input
+      zSize="default"
+      class="pl-9 pr-4 w-full border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      type="search"
+      placeholder="Search..."
+    />
+    <i class="icon-search absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+  </div>
+
+  <div class="hidden md:block">
+    <z-date-picker
+      [value]="selectedDate()"
+      placeholder="Pick a date"
+      (dateChange)="onDateChange($event)"
+      class="border border-gray-200 rounded-lg shadow-sm"
+    />
+  </div>
+
+  <!-- Ações + Perfil -->
+  <div class="flex items-center gap-6">
+    <!-- Botões de ação -->
+    <div class="flex items-center gap-3">
+      <button z-button zType="ghost" class="relative p-2 hover:bg-gray-100 rounded-lg">
+        <div class="icon-message-circle-heart text-gray-500 text-lg"></div>
+      </button>
+      <button z-button zType="ghost" class="relative p-2 hover:bg-gray-100 rounded-lg">
+        <div class="icon-bell text-gray-500 text-lg"></div>
+        <z-badge class="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full shadow">1</z-badge>
+      </button>
+    </div>
+
+    <!-- Perfil -->
+    <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2">
+        <z-avatar [zImage]="zImageDefault" class="w-10 h-10 rounded-full" />
+        <div class="flex flex-col">
+          <h5 class="text-sm font-medium text-gray-800">Matheus</h5>
+          <span class="text-xs text-gray-500">Developer ZardUI</span>
+        </div>
+      </div>
+      <span>
+        <button z-button zType="outline" class="p-2 rounded-lg hover:bg-gray-100">
+          <div class="icon-chevron-down text-gray-500"></div>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
