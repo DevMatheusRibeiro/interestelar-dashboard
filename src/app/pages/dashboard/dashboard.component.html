@@ -25,10 +25,10 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <!-- Saudação -->
     <z-card
-      class="w-full md:col-span-2 bg-white rounded-2xl shadow p-6 flex justify-between items-center relative "
+      class="w-full md:col-span-2 bg-white rounded-2xl shadow p-16 pb-6 flex justify-between items-center relative"
     >
-      <div class="w-full flex items-center justify-between">
-        <!-- Left Content -->
+      <div class="w-full grid grid-cols-2 items-center">
+        <!-- Lado Esquerdo -->
         <div class="w-full">
           <h1 class="text-3xl font-bold text-gray-800 mb-2">Hi, George!</h1>
           <p class="text-gray-500 mb-6">What are we doing today?</p>
@@ -65,10 +65,10 @@
           </div>
         </div>
 
-        <!-- Right Content (Bear Image) -->
-          <div class="absolute right-4 -top-10">
-            <img src="/png/bear.png" alt="Bear" class="w-96 h-96" />
-          </div>
+        <!-- Lado Direito -->
+        <div class="flex justify-center absolute right-4 -top-25">
+          <img src="/png/bear.png" alt="Bear" class="w-130 h-140 -mt-10" />
+        </div>
       </div>
     </z-card>
 
