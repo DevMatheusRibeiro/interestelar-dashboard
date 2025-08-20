@@ -1,82 +1,78 @@
-<div class="flex flex-col gap-8">
-  <!-- Título + Ações -->
+<div class="flex flex-col gap-10">
   <div
     class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
   >
-    <h2 class="text-2xl font-semibold text-gray-800">Dashboard</h2>
-    <div class="flex items-center gap-3">
-      <z-date-picker
-        [value]="selectedDate()"
-        placeholder="By day"
-        (dateChange)="onDateChange($event)"
-        class="border border-gray-200 rounded-lg shadow-sm"
-      />
+    <h2 class="ml-4 text-3xl font-semibold text-gray-600">Dashboard</h2>
+    <div class="flex items-center gap-10 relative">
+      <div class="relative">
+        <z-date-picker
+          zType="outline"
+          [value]="selectedDate()"
+          placeholder="By day"
+          (dateChange)="onDateChange($event)"
+          class="rounded-lg"
+        />
+        <i class="icon-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+      </div>
       <button
         z-button
-        class="bg-blue-900 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-800 transition"
+        class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-600 transition"
       >
-        <div class="icon-circle-plus"></div>
+        <div class="icon-badge-plus"></div>
         Create new
       </button>
     </div>
   </div>
 
-  <!-- Saudação + Notificações -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- Saudação -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
     <z-card
-      class="w-full md:col-span-2 bg-white rounded-2xl shadow p-16 pb-6 flex justify-between items-center relative"
+      class="w-full md:col-span-2 bg-white rounded-2xl shadow p-16 flex justify-between items-center relative"
     >
       <div class="w-full grid grid-cols-2 items-center">
-        <!-- Lado Esquerdo -->
         <div class="w-full">
-          <h1 class="text-3xl font-bold text-gray-800 mb-2">Hi, George!</h1>
-          <p class="text-gray-500 mb-6">What are we doing today?</p>
+            <h1 class="text-6xl font-medium text-gray-800 mb-8">Hi, Matheus!</h1>
+            <p class="text-gray-500 mb-6 font-normal">What are we doing today?</p>
 
           <div class="grid grid-cols-2 gap-4 text-sm">
             <a
               href="#"
-              class="flex items-center gap-2 text-gray-700 hover:text-blue-600"
+              class="flex items-center gap-x-6 text-lg font-medium text-gray-700"
             >
-              <span class="w-3 h-3 rounded-full bg-blue-400"></span>
-              Check Calendar
+              <div class="icon-circle-arrow-right text-blue-400"></div>
+              <p class="text-base hover:text-blue-400 hover:border-b-2 hover:border-blue-400">Check Calendar</p>
             </a>
             <a
               href="#"
-              class="flex items-center gap-2 text-gray-700 hover:text-yellow-600"
+              class="flex items-center gap-x-6 text-lg font-medium text-gray-700"
             >
-              <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
-              Manage Wallet
+              <div class="icon-circle-arrow-right rounded-full text-yellow-400"></div>
+              <p class="text-base hover:text-blue-400 hover:border-b-2 hover:border-blue-400">Manage Wallet</p>
             </a>
             <a
               href="#"
-              class="flex items-center gap-2 text-gray-700 hover:text-red-600"
+              class="flex items-center gap-x-6 text-lg font-medium text-gray-700"
             >
-              <span class="w-3 h-3 rounded-full bg-red-400"></span>
-              Manage Workers
+              <div class="icon-circle-arrow-right rounded-full text-red-400"></div>
+              <p class="text-base hover:text-blue-400 hover:border-b-2 hover:border-blue-400">Manage Workers</p>
             </a>
             <a
               href="#"
-              class="flex items-center gap-2 text-gray-700 hover:text-green-600"
+              class="flex items-center gap-x-6 text-lg font-medium text-gray-700"
             >
-              <span class="w-3 h-3 rounded-full bg-green-400"></span>
-              Manage Projects
+              <div class="icon-circle-arrow-right rounded-full text-green-400"></div>
+              <p class="text-base hover:text-blue-400 hover:border-b-2 hover:border-blue-400">Manage Projects</p>
             </a>
           </div>
         </div>
-
-        <!-- Lado Direito -->
         <div class="flex justify-center absolute right-4 -top-25">
-          <img src="/png/bear.png" alt="Bear" class="w-130 h-140 -mt-10" />
+          <img src="/png/cat.png" alt="cat" class="w-115 h-120 -mt-10" />
         </div>
       </div>
     </z-card>
 
-    <!-- Notificações -->
     <div class="flex flex-col gap-4">
-      <!-- Header notificações -->
       <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2 text-gray-700 font-medium">
+        <div class="flex items-center gap-2 text-gray-700 font-medium text-xl">
           <div class="icon-bell"></div>
           Notifications
         </div>
@@ -89,119 +85,143 @@
         </button>
       </div>
 
-      <!-- Lista de notificações -->
-      <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-5">
         <z-card
-          class="w-full bg-white rounded-xl shadow p-4 flex justify-between items-start"
+          class="w-full bg-white rounded-2xl shadow p-4 flex justify-between items-start"
         >
-          <div class="flex items-start gap-3">
-            <div class="icon-badge-info text-blue-500"></div>
-            <p class="text-sm text-gray-600">
-              You've added new project recently, with no deadline.
-            </p>
-          </div>
-          <button z-button zType="outline" class="p-2">
-            <div class="icon-chevron-right text-gray-500"></div>
-          </button>
-        </z-card>
-
-        <z-card
-          class="w-full bg-white rounded-xl shadow p-4 flex justify-between items-start"
-        >
-          <div class="flex items-start gap-3">
-            <div class="icon-badge-info text-blue-500"></div>
-            <p class="text-sm text-gray-600">
-              Project owner Adam request a refund
-            </p>
-          </div>
-          <button z-button zType="outline" class="p-2">
-            <div class="icon-chevron-right text-gray-500"></div>
-          </button>
-        </z-card>
-
-        <z-card
-          class="w-full bg-white rounded-xl shadow p-4 flex justify-between items-start"
-        >
-          <div class="flex items-start gap-3">
-            <div class="icon-badge-info text-blue-500"></div>
-            <p class="text-sm text-gray-600">
-              Today, it's Tatia's anniversary! <br />
-              <span class="text-blue-900 font-medium"
-                >Wish her happy birthday!</span
+          <div class="w-full flex items-center gap-3 font-medium">
+            <div class="flex-1 flex space-x-4 items-start">
+              <div
+                class="bg-yellow-300 my-auto w-10 h-10 rounded-xl flex items-center text-2xl justify-center"
               >
-            </p>
+                <div class="icon-badge-info text-white "></div>
+              </div>
+              <p class="text-base text-gray-600">
+                You've added new project recently, with no deadline.
+              </p>
+            </div>
+             <button z-button zType="outline" zShape="circle" class="w-[5px] h-3 p-[10px]">
+              <div class="icon-chevron-right text-gray-500"></div>
+            </button>
           </div>
-          <button z-button zType="outline" class="p-2">
-            <div class="icon-chevron-right text-gray-500"></div>
-          </button>
+        </z-card>
+
+        <z-card
+          class="w-full bg-white rounded-xl shadow p-4 flex justify-between items-start"
+        >
+         <div class="w-full flex items-center gap-3 font-medium">
+            <div class="flex-1 flex space-x-4 items-start">
+              <div
+                class="bg-red-500 my-auto w-10 h-10 rounded-xl flex items-center text-2xl justify-center"
+              >
+                <div class="icon-badge-info text-white"></div>
+              </div>
+              <p class="text-base text-gray-600">
+                Project owner Adam request a refund
+              </p>
+            </div>
+            <button z-button zType="outline" zShape="circle" class="w-[5px] h-3 p-[10px]">
+              <div class="icon-chevron-right text-gray-500"></div>
+            </button>
+          </div>
+        </z-card>
+
+        <z-card
+          class="w-full bg-white rounded-xl shadow p-4 flex justify-between items-start"
+        >
+          <div class="w-full flex items-center gap-3 font-medium">
+            <div class="flex-1 flex space-x-4 items-start">
+              <div
+                class="bg-blue-500 my-auto w-10 h-10 rounded-xl flex items-center text-2xl justify-center"
+              >
+                <div class="icon-badge-info text-white"></div>
+              </div>
+              <p class="text-base text-gray-600">
+                Today, it's Tatia's anniversary! <br />
+                <span class="font-normal text-sm"
+                  >Wish her happy birthday!</span
+                >
+              </p>
+            </div>
+            <button z-button zType="outline" zShape="circle" class="w-[5px] h-3 p-[10px]">
+              <div class="icon-chevron-right text-gray-500"></div>
+            </button>
+          </div>
         </z-card>
       </div>
     </div>
   </div>
 
-  <!-- Cards estatísticos -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     <z-card class="w-full bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-      <div class="flex justify-between items-start">
-        <div class="icon-wallet text-blue-600 text-xl"></div>
-        <button z-button zType="ghost" class="p-1 hover:bg-gray-100 rounded">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-5xl">
+          <div class="icon-wallet text-red-400 text-xl"></div>
+        </div>
+        <button z-button zType="ghost"class="text-lg hover:bg-gray-100 rounded">
           <div class="icon-ellipsis-vertical text-gray-500"></div>
         </button>
       </div>
       <div>
-        <p class="text-sm text-gray-500">
+        <p class="text-lg mb-4 text-gray-500">
           Potencial <br />
           Monthly Profit
         </p>
-        <h3 class="text-2xl font-bold text-gray-800">$24.042,000</h3>
+        <h3 class="text-4xl font-semibold text-gray-800">$24.042,000</h3>
       </div>
     </z-card>
 
     <z-card class="w-full bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-      <div class="flex justify-between items-start">
-        <div class="icon-file-text text-green-600 text-xl"></div>
-        <button z-button zType="ghost" class="p-1 hover:bg-gray-100 rounded">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-5xl">
+          <div class="icon-file-text text-green-600 text-xl"></div>
+        </div>
+        <button z-button zType="ghost" class="text-lg hover:bg-gray-100 rounded">
           <div class="icon-ellipsis-vertical text-gray-500"></div>
         </button>
       </div>
       <div>
-        <p class="text-sm text-gray-500">
+        <p class="text-lg mb-4 text-gray-500">
           Workers Wage <br />
           This Month
         </p>
-        <h3 class="text-2xl font-bold text-gray-800">$8.402,000</h3>
+         <h3 class="text-4xl font-semibold text-gray-800">$8.402,000</h3>
       </div>
     </z-card>
 
     <z-card class="w-full bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-      <div class="flex justify-between items-start">
-        <div class="icon-calendar-range text-purple-600 text-xl"></div>
-        <button z-button zType="ghost" class="p-1 hover:bg-gray-100 rounded">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-5xl">
+          <div class="icon-calendar-range text-purple-600 text-xl"></div>
+        </div>
+        <button z-button zType="ghost" class="text-lg hover:bg-gray-100 rounded">
           <div class="icon-ellipsis-vertical text-gray-500"></div>
         </button>
       </div>
       <div>
-        <p class="text-sm text-gray-500">
+        <p class="text-lg mb-4 text-gray-500">
           Average <br />
           Project Length
         </p>
-        <h3 class="text-2xl font-bold text-gray-800">2 weeks</h3>
+         <h3 class="text-4xl font-semibold text-gray-800">2 weeks</h3>
       </div>
     </z-card>
 
     <z-card class="w-full bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-      <div class="flex justify-between items-start">
-        <div class="icon-chart-pie text-orange-500 text-xl"></div>
-        <button z-button zType="ghost" class="p-1 hover:bg-gray-100 rounded">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-5xl">
+          <div class="icon-chart-pie text-orange-500 text-xl"></div>
+        </div>
+        <button z-button zType="ghost" class="text-lg hover:bg-gray-100 rounded">
           <div class="icon-ellipsis-vertical text-gray-500"></div>
         </button>
       </div>
       <div>
-        <p class="text-sm text-gray-500">
+        <p class="text-lg mb-4 text-gray-500">
           Average <br />
           Income per Project
         </p>
-        <h3 class="text-2xl font-bold text-gray-800">$12,000</h3>
+         <h3 class="text-4xl font-semibold text-gray-800">$12,000</h3>
       </div>
     </z-card>
   </div>

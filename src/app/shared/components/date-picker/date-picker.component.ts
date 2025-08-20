@@ -57,6 +57,7 @@ export class ZardDatePickerComponent {
   @ViewChild('calendar', { static: false }) calendar!: ZardCalendarComponent;
 
   readonly class = input<ClassValue>('');
+  readonly buttonClass = input<ClassValue>('');
   readonly zType = input<ZardDatePickerVariants['zType']>('outline');
   readonly zSize = input<ZardDatePickerVariants['zSize']>('default');
   readonly value = input<Date | null>(null);
@@ -80,10 +81,11 @@ export class ZardDatePickerComponent {
   protected readonly buttonClasses = computed(() => {
     const hasValue = !!this.value();
     return mergeClasses(
-      'justify-start text-left font-normal',
+      'justify-start text-left font-normal bg-transparent font-medium text-gray-600',
       !hasValue && 'text-muted-foreground',
       this.zSize() === 'sm' ? 'h-8' : this.zSize() === 'lg' ? 'h-12' : 'h-10',
-      'min-w-[240px]',
+      'min-w-[140px]',
+      this.buttonClass()
     );
   });
 

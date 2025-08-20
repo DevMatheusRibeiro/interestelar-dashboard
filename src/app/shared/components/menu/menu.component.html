@@ -1,25 +1,26 @@
-<div class="flex flex-col justify-between items-center w-20 min-h-screen bg-white shadow-lg py-6">
+<div class="flex flex-col items-center w-20 min-h-screen bg-white shadow-lg py-6">
   <div>
-    <z-avatar [zImage]="zImageDefault" class="w-12 h-12 rounded-full bg-transparent hover:bg-transparent" />
+    <z-avatar [zImage]="zImageDefault" class="w-15 h-15 rounded-full bg-transparent hover:bg-transparent" />
   </div>
 
-  <div class="flex flex-col items-center gap-6 mt-10">
-    <button z-button zType="ghost" class="p-3 hover:bg-gray-100 rounded-xl transition">
+  <div class="flex flex-col items-center gap-6 mt-10 flex-1">
+    <button z-button zType="ghost"class="p-3 text-xl hover:bg-gray-100 rounded-xl transition">
       <div class="icon-layout-dashboard text-gray-500 text-xl"></div>
     </button>
-    <button z-button zType="ghost" class="p-3 hover:bg-gray-100 rounded-xl transition">
+    <button z-button zType="ghost" class="p-3 text-xl hover:bg-gray-100 rounded-xl transition">
       <div class="icon-wallet text-gray-500 text-xl"></div>
     </button>
-    <button z-button zType="ghost" class="p-3 hover:bg-gray-100 rounded-xl transition">
+    <button z-button zType="ghost" class="p-3 text-xl hover:bg-gray-100 rounded-xl transition">
       <div class="icon-chart-pie text-gray-500 text-xl"></div>
     </button>
-    <button z-button zType="ghost" class="p-3 hover:bg-gray-100 rounded-xl transition">
+    <button z-button zType="ghost" class="p-3 text-xl hover:bg-gray-100 rounded-xl transition">
       <div class="icon-users text-gray-500 text-xl"></div>
     </button>
   </div>
 
-  <!-- Config -->
   <div class="mb-4">
-    <div class="icon-settings text-gray-400 text-xl hover:text-gray-600 cursor-pointer transition"></div>
+     <button z-button zType="ghost" class="p-3 text-xl hover:bg-gray-100 rounded-xl transition">
+      <div class="icon-settings text-gray-400 text-xl hover:text-gray-600 cursor-pointer transition"></div>
+    </button>
   </div>
 </div>
