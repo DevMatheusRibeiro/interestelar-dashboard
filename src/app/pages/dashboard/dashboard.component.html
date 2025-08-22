@@ -5,14 +5,9 @@
     <h2 class="ml-4 text-3xl font-semibold text-gray-600">Dashboard</h2>
     <div class="flex items-center gap-10 relative">
       <div class="relative">
-        <z-date-picker
-          zType="outline"
-          [value]="selectedDate()"
-          placeholder="By day"
-          (dateChange)="onDateChange($event)"
-          class="rounded-lg"
-        />
-        <i class="icon-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+        <z-select placeholder="By day">
+          <z-select-item value="apple">By day</z-select-item>
+        </z-select>
       </div>
       <button
         z-button
