@@ -1,4 +1,7 @@
 [build]
-  command = "rm -rf node_modules package-lock.json && npm install && npm run build"
+  command = "rm -rf node_modules package-lock.json .angular && npm install --platform=linux --arch=x64 && npm run build"
   publish = "dist/dashboad-v1/browser"
 
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--platform=linux --arch=x64"
