@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "dist/dashboad-v1/browser"
+
+[build.environment]
+  NODE_VERSION = "20"

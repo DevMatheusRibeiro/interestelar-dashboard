@@ -24,6 +24,7 @@
     "lucide-static": "^0.540.0",
     "rxjs": "~7.8.0",
     "tailwind-merge": "^3.3.1",
+    "lightningcss": "^1.24.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
