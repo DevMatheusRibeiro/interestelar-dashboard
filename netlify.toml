@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "npm install && npm rebuild lightningcss --force && npm run build"
   publish = "dist/dashboad-v1/browser"
 
 [build.environment]
