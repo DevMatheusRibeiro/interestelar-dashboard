@@ -19,10 +19,10 @@
 
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
     <z-card
-      class="w-full lg:col-span-2 bg-white rounded-2xl shadow py-8 px-6 lg:p-16 flex justify-between items-center relative"
+      class="w-full lg:col-span-2 bg-white rounded-2xl shadow py-8 px-6 md:py-0 md:px-4 lg:p-16 flex justify-between items-center relative"
     >
       <div class="w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-0">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-0">
           <div class="w-full order-2 lg:order-1">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-800 mb-4 lg:mb-8 text-center lg:text-left">Hi, Matheus!</h1>
             <p class="text-gray-500 mb-6 font-normal text-center lg:text-left">What are we doing today?</p>
@@ -30,28 +30,28 @@
             <div class="grid grid-cols-2 md:grid-cols-2 gap-4 text-sm">
               <a
                 href="#"
-                class="flex items-center gap-x-2 md:gap-x-6 text-lg font-medium text-gray-700 justify-start"
+                class="flex items-center gap-x-2 md:gap-x-2 lg:gap-x-6 text-lg font-medium text-gray-700 justify-start"
               >
                 <div class="icon-circle-arrow-right text-blue-400"></div>
                 <p class="text-base hover:text-blue-400 hover:border-b-2 hover:border-blue-400">Check Calendar</p>
               </a>
               <a
                 href="#"
-                class="flex items-center gap-x-2 md:gap-x-6 text-lg font-medium text-gray-700 justify-start"
+                class="flex items-center gap-x-2 md:gap-x-2 lg:gap-x-6 text-lg font-medium text-gray-700 justify-start"
               >
                 <div class="icon-circle-arrow-right rounded-full text-yellow-400"></div>
                 <p class="text-base hover:text-blue-400 hover:border-b-2 hover:border-blue-400">Manage Wallet</p>
               </a>
               <a
                 href="#"
-                class="flex items-center gap-x-2 md:gap-x-6 text-lg font-medium text-gray-700 justify-start"
+                class="flex items-center gap-x-2 md:gap-x-2 lg:gap-x-6 text-lg font-medium text-gray-700 justify-start"
               >
                 <div class="icon-circle-arrow-right rounded-full text-red-400"></div>
                 <p class="text-base hover:text-blue-400 hover:border-b-2 hover:border-blue-400">Manage Workers</p>
               </a>
               <a
                 href="#"
-                class="flex items-center gap-x-2 md:gap-x-6 text-lg font-medium text-gray-700 justify-start"
+                class="flex items-center gap-x-2 md:gap-x-2 lg:gap-x-6 text-lg font-medium text-gray-700 justify-start"
               >
                 <div class="icon-circle-arrow-right rounded-full text-green-400"></div>
                 <p class="text-base hover:text-blue-400 hover:border-b-2 hover:border-blue-400">Manage Projects</p>
@@ -60,7 +60,7 @@
           </div>
 
           <div class="hidden md:flex justify-center order-1 lg:order-2 lg:absolute lg:right-4 lg:-top-25">
-            <img src="/png/cat.png" alt="cat" class="w-60 h-64 md:w-80 md:h-86 lg:w-115 lg:h-120 -mt-4 lg:-mt-10" />
+            <img src="/png/cat.png" alt="cat" class="w-60 h-64 md:w-70 md:h-80 lg:w-115 lg:h-120 -mt-4 lg:-mt-10" />
           </div>
         </div>
       </div>
@@ -149,9 +149,9 @@
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    <z-card class="w-full bg-white rounded-2xl shadow p-3 md:p-6 flex flex-col gap-4">
+    <z-card class="w-full bg-white rounded-2xl shadow p-3 md:p-4 lg:p-6 flex flex-col gap-4">
       <div class="flex justify-between items-start mb-2">
-        <div class="text-4xl md:text-5xl">
+        <div class="text-4xl lg:text-5xl">
           <div class="icon-wallet text-red-400 text-xl"></div>
         </div>
         <button z-button zType="ghost" class="text-lg hover:bg-gray-100 rounded">
@@ -160,16 +160,16 @@
       </div>
       <div>
         <p class="text-lg mb-4 text-gray-500">
-          Potencial <br class="hidden md:block" />
+          Potencial <br class="hidden lg:block" />
           Monthly Profit
         </p>
-        <h3 class="text-2xl md:text-4xl font-semibold text-gray-800">$24.042,000</h3>
+        <h3 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800">$24.042,000</h3>
       </div>
     </z-card>
 
-    <z-card class="w-full bg-white rounded-2xl shadow p-3 md:p-6 flex flex-col gap-4">
+    <z-card class="w-full bg-white rounded-2xl shadow p-3 md:p-4 lg:p-6 flex flex-col gap-4">
       <div class="flex justify-between items-start mb-2">
-        <div class="text-4xl md:text-5xl">
+        <div class="text-4xl lg:text-5xl">
           <div class="icon-file-text text-green-600 text-xl"></div>
         </div>
         <button z-button zType="ghost" class="text-lg hover:bg-gray-100 rounded">
@@ -178,16 +178,16 @@
       </div>
       <div>
         <p class="text-lg mb-4 text-gray-500">
-          Workers Wage <br class="hidden md:block" />
+          Workers Wage <br class="hidden lg:block" />
           This Month
         </p>
-         <h3 class="text-2xl md:text-4xl font-semibold text-gray-800">$8.402,000</h3>
+         <h3 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800">$8.402,000</h3>
       </div>
     </z-card>
 
-    <z-card class="w-full bg-white rounded-2xl shadow p-3 md:p-6 flex flex-col gap-4">
+    <z-card class="w-full bg-white rounded-2xl shadow p-3 md:p-4 lg:p-6 flex flex-col gap-4">
       <div class="flex justify-between items-start mb-2">
-        <div class="text-4xl md:text-5xl">
+        <div class="text-4xl lg:text-5xl">
           <div class="icon-calendar-range text-purple-600 text-xl"></div>
         </div>
         <button z-button zType="ghost" class="text-lg hover:bg-gray-100 rounded">
@@ -196,16 +196,16 @@
       </div>
       <div>
         <p class="text-lg mb-4 text-gray-500">
-          Average <br class="hidden md:block" />
+          Average <br class="hidden lg:block" />
           Project Length
         </p>
-         <h3 class="text-2xl md:text-4xl font-semibold text-gray-800">2 weeks</h3>
+         <h3 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800">2 weeks</h3>
       </div>
     </z-card>
 
-    <z-card class="w-full bg-white rounded-2xl shadow p-3 md:p-6 flex flex-col gap-4">
+    <z-card class="w-full bg-white rounded-2xl shadow p-3 md:p-4 lg:p-6 flex flex-col gap-4">
       <div class="flex justify-between items-start mb-2">
-        <div class="text-4xl md:text-5xl">
+        <div class="text-4xl lg:text-5xl">
           <div class="icon-chart-pie text-orange-500 text-xl"></div>
         </div>
         <button z-button zType="ghost" class="text-lg hover:bg-gray-100 rounded">
@@ -214,10 +214,10 @@
       </div>
       <div>
         <p class="text-lg mb-4 text-gray-500">
-          Average <br class="hidden md:block" />
+          Average <br class="hidden lg:block" />
           Income per Project
         </p>
-         <h3 class="text-2xl md:text-4xl font-semibold text-gray-800">$12,000</h3>
+         <h3 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800">$12,000</h3>
       </div>
     </z-card>
   </div>
