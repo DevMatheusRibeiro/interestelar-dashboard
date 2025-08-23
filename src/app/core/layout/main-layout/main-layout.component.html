@@ -1,16 +1,59 @@
-<div class="grid grid-cols-[80px_1fr] grid-rows-[auto_1fr] min-h-screen">
-  <!-- Menu lateral -->
+<div class="grid grid-cols-1 grid-rows-[auto_1fr] min-h-screen lg:grid-cols-[80px_1fr] lg:grid-rows-[auto_1fr]">
   <interestelar-menu
-    class="hidden md:block border-r border-gray-100 bg-white shadow-lg row-span-2">
+    #sidebarMenu
+    class="hidden lg:block border-r border-gray-100 bg-white shadow-lg row-span-2">
   </interestelar-menu>
 
-  <!-- Header -->
-  <header class="bg-gray-50 shadow-sm px-4 py-3">
-    <interestelar-header></interestelar-header>
+  <div
+    class="fixed inset-0 z-50 lg:hidden h-dvh"
+    [class.hidden]="!isMobileMenuOpen()"
+    (click)="closeMobileMenu()">
+    <div class="absolute inset-0 bg-black/50 transition-opacity"
+         [class.opacity-0]="!isMobileMenuOpen()"
+         [class.opacity-100]="isMobileMenuOpen()"></div>
+
+    <div class="absolute left-0 top-0 h-dvh w-65 bg-white shadow-xl transform transition-transform"
+         [class.-translate-x-full]="!isMobileMenuOpen()"
+         [class.translate-x-0]="isMobileMenuOpen()"
+         (click)="$event.stopPropagation()"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="mobile-menu-title">
+      <interestelar-menu
+        id="mobile-menu-title"
+        class="border-r border-gray-100 bg-white shadow-lg h-dvh w-full"
+        (closeMenu)="closeMobileMenu()">
+      </interestelar-menu>
+    </div>
+  </div>
+
+  <header class="bg-gray-50 shadow-sm px-4 py-3 lg:col-start-2">
+    <div class="flex items-center">
+      <button
+        class="lg:hidden mr-4 p-2 hover:bg-gray-100 rounded-lg transition-colors"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="isMobileMenuOpen()"
+        aria-controls="mobile-menu-title"
+        aria-label="Open navigation menu">
+        <div class="w-6 h-6 flex flex-col justify-center items-center">
+          <span class="block w-5 h-0.5 bg-gray-600 transition-all"
+                [class.rotate-45]="isMobileMenuOpen()"
+                [class.translate-y-1.5]="isMobileMenuOpen()"></span>
+          <span class="block w-5 h-0.5 bg-gray-600 mt-1 transition-all"
+                [class.opacity-0]="isMobileMenuOpen()"></span>
+          <span class="block w-5 h-0.5 bg-gray-600 mt-1 transition-all"
+                [class.-rotate-45]="isMobileMenuOpen()"
+                [class.-translate-y-1.5]="isMobileMenuOpen()"></span>
+        </div>
+      </button>
+
+      <div class="flex-1">
+        <interestelar-header></interestelar-header>
+      </div>
+    </div>
   </header>
 
-  <!-- Conteúdo -->
-  <main class="py-6 px-25 bg-gray-50">
+  <main class="py-6 px-4 md:px-8 lg:px-25 bg-gray-50 lg:col-start-2">
     <router-outlet></router-outlet>
   </main>
 </div>
