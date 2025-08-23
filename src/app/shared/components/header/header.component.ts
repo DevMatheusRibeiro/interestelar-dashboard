@@ -9,22 +9,25 @@ import { ZardBadgeComponent } from '../badge/badge.component';
 
 @Component({
   selector: 'interestelar-header',
-  imports: [ZardInputDirective, ZardDatePickerComponent, ZardButtonComponent, ZardAvatarComponent, ZardBadgeComponent],
+  imports: [
+    ZardInputDirective,
+    ZardDatePickerComponent,
+    ZardButtonComponent,
+    ZardAvatarComponent,
+    ZardBadgeComponent,
+  ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-
-    selectedDate = signal<Date | null>(new Date());
-
-  onDateChange(date: Date | null) {
-    this.selectedDate.set(date);
-    console.log('Selected date:', date);
-  }
-
-   readonly zImageDefault = {
-    fallback: 'ZA',
+  protected readonly zImageDefault = {
+    fallback: 'YS',
     url: '/png/yourself.png',
-    alt: 'ZadUI',
+    alt: 'Yourself',
   };
+  protected readonly selectedDate = signal<Date | null>(new Date());
+
+  protected onDateChange(date: Date | null) {
+    this.selectedDate.set(date);
+  }
 }

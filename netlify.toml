@@ -5,3 +5,8 @@
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--platform=linux --arch=x64"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

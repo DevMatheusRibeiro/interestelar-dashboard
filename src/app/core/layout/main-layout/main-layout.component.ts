@@ -1,7 +1,7 @@
 import { HeaderComponent } from '@shared/components/header/header.component';
 import { MenuComponent } from '@shared/components/menu/menu.component';
-import { RouterOutlet } from '@angular/router';
 import { Component, HostListener, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
@@ -11,10 +11,10 @@ import { Component, HostListener, signal } from '@angular/core';
   styleUrl: './main-layout.component.css'
 })
 export class MainLayoutComponent {
-  isMobileMenuOpen = signal(false);
+  protected readonly isMobileMenuOpen = signal(false);
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
+  protected onResize(event: Event) {
     const window = event.target as Window;
     if (window.innerWidth >= 991) {
       this.isMobileMenuOpen.set(false);
@@ -22,18 +22,18 @@ export class MainLayoutComponent {
   }
 
   @HostListener('document:keydown.escape', ['$event'])
-  onEscapeKeydown(event: KeyboardEvent) {
+  protected onEscapeKeydown(event: KeyboardEvent) {
     if (this.isMobileMenuOpen()) {
       this.closeMobileMenu();
     }
   }
 
-  toggleMobileMenu() {
+  protected toggleMobileMenu() {
     this.isMobileMenuOpen.update(open => !open);
     this.toggleBodyScroll();
   }
 
-  closeMobileMenu() {
+  protected closeMobileMenu() {
     this.isMobileMenuOpen.set(false);
     this.enableBodyScroll();
   }

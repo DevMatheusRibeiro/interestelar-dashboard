@@ -12,15 +12,14 @@ import { ZardTooltipModule } from '../tooltip/tooltip';
   styleUrl: './menu.component.css',
 })
 export class MenuComponent {
-  readonly closeMenu = output<void>();
-
-  readonly zImageDefault = {
-    fallback: 'IT',
+  protected readonly zImageDefault = {
+    fallback: 'IE',
     url: '/png/interestelar.png',
     alt: 'Interestelar',
   };
+  protected readonly closeMenu = output<void>();
 
-  closeMobileMenu() {
+  protected closeMobileMenu() {
     this.closeMenu.emit();
   }
 }

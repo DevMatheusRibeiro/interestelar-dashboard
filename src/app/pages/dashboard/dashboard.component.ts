@@ -13,11 +13,4 @@ import { ZardButtonComponent } from './../../shared/components/button/button.com
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
-selectedDate = signal<Date | null>(null);
-
-  onDateChange(date: Date | null) {
-    this.selectedDate.set(date);
-    console.log('Selected date:', date);
-  }
-}
+export class DashboardComponent {}

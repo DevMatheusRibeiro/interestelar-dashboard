@@ -1,29 +1,13 @@
+import { ChangeDetectionStrategy, Component, computed, contentChildren, ElementRef, forwardRef, HostListener, inject, input, OnDestroy, OnInit, output, signal, TemplateRef, ViewChild, ViewContainerRef, } from '@angular/core';
 import { Overlay, OverlayModule, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overlay';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { mergeClasses } from '@shared/utils/merge-classes';
 import { TemplatePortal } from '@angular/cdk/portal';
 import { NgIf } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  contentChildren,
-  ElementRef,
-  forwardRef,
-  HostListener,
-  inject,
-  input,
-  OnDestroy,
-  OnInit,
-  output,
-  signal,
-  TemplateRef,
-  ViewChild,
-  ViewContainerRef,
-} from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { mergeClasses } from '@shared/utils/merge-classes';
-import { ZardSelectItemComponent } from './select-item.component';
 import { selectContentVariants, selectTriggerVariants, ZardSelectTriggerVariants } from './select.variants';
+import { ZardSelectItemComponent } from './select-item.component';
+
 
 @Component({
   selector: 'z-select, [z-select]',
@@ -80,7 +64,9 @@ export class ZardSelectComponent implements ControlValueAccessor, OnInit, OnDest
 
   @ViewChild('dropdownTemplate', { static: true }) dropdownTemplate!: TemplateRef<any>;
 
-  readonly selectItems = contentChildren(ZardSelectItemComponent);
+  readonly selectItems = contentChildren('z-select-item, [z-select-item]', {
+    read: ZardSelectItemComponent,
+  });
 
   private overlayRef?: OverlayRef;
   private portal?: TemplatePortal;
