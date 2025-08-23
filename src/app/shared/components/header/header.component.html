@@ -1,5 +1,5 @@
-<div class="w-full h-20 flex items-center justify-between px-4 md:px-6 bg-gray-50 ">
-  <div class="relative w-64">
+<div class="w-full h-20 flex items-center justify-between px-4 md:px-6 bg-gray-50">
+  <div class="relative w-full max-w-xs lg:w-64 flex-1 lg:flex-none">
     <input
       z-input
       zSize="default"
@@ -10,7 +10,7 @@
     <i class="icon-search absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
   </div>
 
-  <div class="hidden md:block w-45">
+  <div class="hidden lg:block w-45">
     <div class="relative">
       <z-date-picker
         zType="ghost"
@@ -24,8 +24,8 @@
     </div>
   </div>
 
-  <div class="flex items-center gap-6">
-    <div class="flex items-center gap-3">
+  <div class="flex items-center gap-3 lg:gap-6 ml-4">
+    <div class="flex items-center gap-2 lg:gap-3">
       <button z-button zType="ghost" class="text-2xl relative p-2 hover:bg-gray-100 rounded-lg">
         <div class="icon-message-circle-more text-gray-500 text-xl"></div>
       </button>
@@ -35,15 +35,18 @@
       </button>
     </div>
 
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2 lg:gap-3">
       <div class="flex items-center gap-2">
-        <z-avatar [zImage]="zImageDefault" zShape="circle" class="w-10 h-10" />
-        <div class="flex flex-col">
+        <z-avatar [zImage]="zImageDefault" zShape="circle" class="w-8 h-8 lg:w-10 lg:h-10" />
+        <div class="hidden md:flex flex-col">
           <h5 class="text-sm font-medium text-gray-800">Matheus</h5>
-          <span class="flex gap-1 font-medium text-xs text-gray-500"><div class="icon-heart text-red-400"></div> ZardUI</span>
+          <span class="flex gap-1 font-medium text-xs text-gray-500">
+            <div class="icon-heart text-red-400"></div>
+            ZardUI
+          </span>
         </div>
       </div>
-      <span>
+      <span class="hidden lg:block">
          <button z-button zType="outline" zShape="circle" class="w-[5px] h-3 p-[10px] bg-transparent">
           <div class="icon-chevron-down text-gray-500"></div>
         </button>
