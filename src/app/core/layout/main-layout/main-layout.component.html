@@ -12,7 +12,7 @@
          [class.opacity-0]="!isMobileMenuOpen()"
          [class.opacity-100]="isMobileMenuOpen()"></div>
 
-    <div class="absolute left-0 top-0 h-dvh w-65 bg-white shadow-xl transform transition-transform"
+    <div class="absolute left-0 top-0 h-dvh w-65 md:w-120 bg-white shadow-xl transform transition-transform"
          [class.-translate-x-full]="!isMobileMenuOpen()"
          [class.translate-x-0]="isMobileMenuOpen()"
          (click)="$event.stopPropagation()"
